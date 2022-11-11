@@ -15,7 +15,7 @@ dependencies:
 
 dependency_overrides:
   enhanced_containers:
-    path: ../external/enhanced_containers
+    path: external/enhanced_containers
 
 dev_dependencies:
   flutter_test:
