@@ -1,5 +1,8 @@
+import 'package:provider/provider.dart';
+
 import '../misc/locale_text.dart';
 import '../models/options.dart';
+import '../providers/answers.dart';
 
 class Age implements Options {
   Age() : choice = -1;
@@ -20,5 +23,11 @@ class Age implements Options {
       default:
         return LocaleText.of(context).all;
     }
+  }
+
+  @override
+  void clickAnswerCallback(context) {
+    final answers = Provider.of<Answers>(context, listen: false);
+    answers.age = this;
   }
 }

@@ -73,6 +73,7 @@ class _SectionButtonState extends State<SectionButton> {
     return GestureDetector(
       onTap: () {
         _optionSelected = index;
+        text.clickAnswerCallback(context);
         setState(() {});
       },
       child: Padding(

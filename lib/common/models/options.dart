@@ -3,4 +3,6 @@ import 'package:flutter/material.dart';
 
 abstract class Options {
   String title(BuildContext context);
+
+  void clickAnswerCallback(BuildContext context);
 }
