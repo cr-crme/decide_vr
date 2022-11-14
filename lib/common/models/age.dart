@@ -1,10 +1,10 @@
 import 'package:provider/provider.dart';
 
+import './option.dart';
 import '../misc/locale_text.dart';
-import '../models/options.dart';
 import '../providers/answers.dart';
 
-class Age implements Options {
+class Age implements Option {
   Age() : choice = -1;
   Age._fromChoice(this.choice);
 

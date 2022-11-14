@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../models/options.dart';
+import '../models/option.dart';
 
 class SectionButton extends StatefulWidget {
   const SectionButton(
@@ -12,7 +12,7 @@ class SectionButton extends StatefulWidget {
   });
 
   final String title;
-  final List<Options> options;
+  final List<Option> options;
 
   final double width;
   final double cornerRadius;
@@ -57,29 +57,29 @@ class _SectionButtonState extends State<SectionButton> {
             ),
           ),
           if (_isExpanded)
-            ...widget.options.asMap().entries.map(
-              (entry) {
-                final index = entry.key;
-                final text = entry.value;
-                return _optionWidget(index, text);
-              },
-            ).toList(),
+            ...widget.options
+                .asMap()
+                .entries
+                .map((entry) => _optionWidget(entry.key, entry.value))
+                .toList(),
         ],
       ),
     );
   }
 
-  GestureDetector _optionWidget(int index, Options text) {
+  void _selectOption(int index, Option option) {
+    _optionSelected = index;
+    option.clickAnswerCallback(context);
+    setState(() {});
+  }
+
+  GestureDetector _optionWidget(int index, Option option) {
     return GestureDetector(
-      onTap: () {
-        _optionSelected = index;
-        text.clickAnswerCallback(context);
-        setState(() {});
-      },
+      onTap: () => _selectOption(index, option),
       child: Padding(
         padding: const EdgeInsets.all(5.0),
         child: Text(
-          text.title(context),
+          option.title(context),
           style: Theme.of(context).textTheme.titleMedium!.copyWith(
               color: _optionSelected == index
                   ? Theme.of(context).colorScheme.onSecondary
