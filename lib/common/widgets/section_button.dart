@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 
 import '../models/option.dart';
 
+enum DefaultOption {
+  first,
+  last,
+}
+
 class SectionButton extends StatefulWidget {
   const SectionButton(
     this.title, {
@@ -9,10 +14,12 @@ class SectionButton extends StatefulWidget {
     required this.options,
     this.width = 200,
     this.cornerRadius = 20,
+    this.defaultOption = DefaultOption.first,
   });
 
   final String title;
   final List<Option> options;
+  final DefaultOption defaultOption;
 
   final double width;
   final double cornerRadius;
@@ -23,7 +30,15 @@ class SectionButton extends StatefulWidget {
 
 class _SectionButtonState extends State<SectionButton> {
   bool _isExpanded = false;
-  int _optionSelected = -1;
+  late int _optionSelected;
+
+  @override
+  void initState() {
+    super.initState();
+    _optionSelected = widget.defaultOption == DefaultOption.first
+        ? 0
+        : widget.options.length - 1;
+  }
 
   @override
   Widget build(BuildContext context) {

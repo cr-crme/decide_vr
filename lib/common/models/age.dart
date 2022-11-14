@@ -14,14 +14,14 @@ class Age implements Option {
   static Age get all => Age._fromChoice(-1);
 
   @override
-  String title(context) {
+  String title(context, {listen = true}) {
     switch (choice) {
       case 0:
-        return LocaleText.of(context).young;
+        return LocaleText.of(context, listen: listen).young;
       case 1:
-        return LocaleText.of(context).old;
+        return LocaleText.of(context, listen: listen).old;
       default:
-        return LocaleText.of(context).all;
+        return LocaleText.of(context, listen: listen).all;
     }
   }
 

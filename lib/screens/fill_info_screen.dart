@@ -28,6 +28,7 @@ class FillingInfoScreen extends StatelessWidget {
                 options: [Age.young, Age.old, Age.all],
                 width: _buttonWidth,
                 cornerRadius: _buttonRadius,
+                defaultOption: DefaultOption.last,
               ),
             ),
             Padding(
