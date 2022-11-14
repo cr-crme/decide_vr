@@ -26,7 +26,8 @@ class SubmitButton extends StatelessWidget {
       content: Text(
         '${LocaleText.of(context, listen: false).age}: ${answers.age.title(context, listen: false)}\n'
         '${LocaleText.of(context, listen: false).sittingAbility}: ${answers.sittingAbility.title(context, listen: false)}\n'
-        '${LocaleText.of(context, listen: false).standingAbility}: ${answers.standingAbility.title(context, listen: false)}\n',
+        '${LocaleText.of(context, listen: false).standingAbility}: ${answers.standingAbility.title(context, listen: false)}\n'
+        '${LocaleText.of(context, listen: false).gameGoal}: ${answers.gameGoal.title(context, listen: false)}\n',
       ),
     );
 

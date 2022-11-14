@@ -93,7 +93,7 @@ class _SectionButtonState extends State<SectionButton> {
     return GestureDetector(
       onTap: () => _selectOption(index, option),
       child: Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.all(7.0),
         child: Text(
           option.title(context),
           style: Theme.of(context).textTheme.titleMedium!.copyWith(

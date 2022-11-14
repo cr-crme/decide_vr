@@ -40,5 +40,20 @@ class LocaleText with ChangeNotifier {
         'fr': 'Sans support statique'
       }[language]!;
 
+  String get gameGoal =>
+      {'en': 'Game use goal', 'fr': 'But de l\'utilisation'}[language]!;
+  String get endurance => {'en': 'Endurance', 'fr': 'Endurance'}[language]!;
+  String get coordination =>
+      {'en': 'Coordination', 'fr': 'Coordination'}[language]!;
+  String get lowerExtremityStrength => {
+        'en': 'Lower extremity strength',
+        'fr': 'Force dans les jambes'
+      }[language]!;
+  String get balance => {'en': 'Balance', 'fr': 'Équilibre'}[language]!;
+  String get unimanualUpperExtremity =>
+      {'en': 'Unimanual upper extremity', 'fr': 'Un bras'}[language]!;
+  String get bimanualUpperExtremity =>
+      {'en': 'Bimanual upper extremity', 'fr': 'Ambidextrie'}[language]!;
+
   String get submit => {'en': 'Submit', 'fr': 'Soumettre'}[language]!;
 }
