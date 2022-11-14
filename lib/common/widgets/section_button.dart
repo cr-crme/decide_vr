@@ -89,17 +89,22 @@ class _SectionButtonState extends State<SectionButton> {
     setState(() {});
   }
 
-  GestureDetector _optionWidget(int index, Option option) {
-    return GestureDetector(
-      onTap: () => _selectOption(index, option),
-      child: Padding(
-        padding: const EdgeInsets.all(7.0),
-        child: Text(
-          option.title(context),
-          style: Theme.of(context).textTheme.titleMedium!.copyWith(
-              color: _optionSelected == index
-                  ? Theme.of(context).colorScheme.onSecondary
-                  : Colors.black),
+  Widget _optionWidget(int index, Option option) {
+    return SizedBox(
+      width: widget.width,
+      child: GestureDetector(
+        onTap: () => _selectOption(index, option),
+        behavior: HitTestBehavior.opaque,
+        child: Padding(
+          padding: const EdgeInsets.all(7.0),
+          child: Text(
+            option.title(context),
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                color: _optionSelected == index
+                    ? Theme.of(context).colorScheme.onSecondary
+                    : Colors.black),
+          ),
         ),
       ),
     );

@@ -21,74 +21,76 @@ class FillingInfoScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: VrAppBar(title: Text(LocaleText.of(context).title)),
-      body: Center(
-        child: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.only(top: _spacing),
-              child: SectionButton(
-                LocaleText.of(context).age,
-                options: [Age.young, Age.old, Age.all],
-                width: _buttonWidth,
-                cornerRadius: _buttonRadius,
-                defaultOption: DefaultOption.last,
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(top: _spacing),
+                child: SectionButton(
+                  LocaleText.of(context).age,
+                  options: [Age.young, Age.old, Age.all],
+                  width: _buttonWidth,
+                  cornerRadius: _buttonRadius,
+                  defaultOption: DefaultOption.last,
+                ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: _spacing),
-              child: SectionButton(
-                LocaleText.of(context).sittingAbility,
-                options: [
-                  SittingAbility.dynamicWithSupport,
-                  SittingAbility.dynamicNoSupport,
-                  SittingAbility.staticWithSupport,
-                  SittingAbility.staticNoSupport,
-                ],
-                width: _buttonWidth,
-                cornerRadius: _buttonRadius,
-                defaultOption: DefaultOption.first,
+              Padding(
+                padding: EdgeInsets.only(top: _spacing),
+                child: SectionButton(
+                  LocaleText.of(context).sittingAbility,
+                  options: [
+                    SittingAbility.dynamicWithSupport,
+                    SittingAbility.dynamicNoSupport,
+                    SittingAbility.staticWithSupport,
+                    SittingAbility.staticNoSupport,
+                  ],
+                  width: _buttonWidth,
+                  cornerRadius: _buttonRadius,
+                  defaultOption: DefaultOption.first,
+                ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: _spacing),
-              child: SectionButton(
-                LocaleText.of(context).standingAbility,
-                options: [
-                  StandingAbility.dynamicWithSupport,
-                  StandingAbility.dynamicNoSupport,
-                  StandingAbility.staticWithSupport,
-                  StandingAbility.staticNoSupport,
-                ],
-                width: _buttonWidth,
-                cornerRadius: _buttonRadius,
-                defaultOption: DefaultOption.first,
+              Padding(
+                padding: EdgeInsets.only(top: _spacing),
+                child: SectionButton(
+                  LocaleText.of(context).standingAbility,
+                  options: [
+                    StandingAbility.dynamicWithSupport,
+                    StandingAbility.dynamicNoSupport,
+                    StandingAbility.staticWithSupport,
+                    StandingAbility.staticNoSupport,
+                  ],
+                  width: _buttonWidth,
+                  cornerRadius: _buttonRadius,
+                  defaultOption: DefaultOption.first,
+                ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: _spacing),
-              child: SectionButton(
-                LocaleText.of(context).gameGoal,
-                options: [
-                  GameGoal.endurance,
-                  GameGoal.coordination,
-                  GameGoal.lowerExtremityStrength,
-                  GameGoal.balance,
-                  GameGoal.unimanualUpperExtremity,
-                  GameGoal.bimanualUpperExtremity,
-                ],
-                width: _buttonWidth,
-                cornerRadius: _buttonRadius,
-                defaultOption: DefaultOption.first,
+              Padding(
+                padding: EdgeInsets.only(top: _spacing),
+                child: SectionButton(
+                  LocaleText.of(context).gameGoal,
+                  options: [
+                    GameGoal.endurance,
+                    GameGoal.coordination,
+                    GameGoal.lowerExtremityStrength,
+                    GameGoal.balance,
+                    GameGoal.unimanualUpperExtremity,
+                    GameGoal.bimanualUpperExtremity,
+                  ],
+                  width: _buttonWidth,
+                  cornerRadius: _buttonRadius,
+                  defaultOption: DefaultOption.first,
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20.0),
-              child: SubmitButton(
-                LocaleText.of(context).submit,
-                width: 150,
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20.0),
+                child: SubmitButton(
+                  LocaleText.of(context).submit,
+                  width: 150,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
