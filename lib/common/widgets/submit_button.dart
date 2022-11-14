@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../misc/locale_text.dart';
 import '../providers/answers.dart';
 
 class SubmitButton extends StatelessWidget {
@@ -21,8 +22,11 @@ class SubmitButton extends StatelessWidget {
   void _analyseResults(BuildContext context, Answers answers) {
     // set up the AlertDialog
     AlertDialog alert = AlertDialog(
-      title: const Text("Voici les options sélectionnées"),
-      content: Text("Age: ${answers.age.title(context, listen: false)}\n"),
+      title: const Text('Voici les options sélectionnées'),
+      content: Text(
+        '${LocaleText.of(context, listen: false).age}: ${answers.age.title(context, listen: false)}\n'
+        '${LocaleText.of(context, listen: false).sittingAbility}: ${answers.sittingAbility.title(context, listen: false)}\n',
+      ),
     );
 
     // show the dialog

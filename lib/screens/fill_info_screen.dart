@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../common/misc/locale_text.dart';
 import '../common/models/age.dart';
+import '../common/models/sitting_ability.dart';
 import '../common/widgets/section_button.dart';
 import '../common/widgets/submit_button.dart';
 import '../common/widgets/vr_app_bar.dart';
@@ -24,11 +25,26 @@ class FillingInfoScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(top: _spacing),
               child: SectionButton(
-                'Age',
+                LocaleText.of(context).age,
                 options: [Age.young, Age.old, Age.all],
                 width: _buttonWidth,
                 cornerRadius: _buttonRadius,
                 defaultOption: DefaultOption.last,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: _spacing),
+              child: SectionButton(
+                LocaleText.of(context).sittingAbility,
+                options: [
+                  SittingAbility.dynamicWithSupport,
+                  SittingAbility.dynamicNoSupport,
+                  SittingAbility.staticWithSupport,
+                  SittingAbility.staticNoSupport,
+                ],
+                width: _buttonWidth,
+                cornerRadius: _buttonRadius,
+                defaultOption: DefaultOption.first,
               ),
             ),
             Padding(
