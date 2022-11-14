@@ -10,7 +10,7 @@ ThemeData get decideVrTheme {
       primary: Color.fromARGB(255, 0, 243, 147),
       onPrimary: Colors.black,
       secondary: Color.fromARGB(255, 9, 162, 185),
-      onSecondary: Colors.black,
+      onSecondary: Colors.white,
       error: Colors.red,
       onError: Colors.black,
       background: _backgroundColor,
