@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../common/misc/locale_text.dart';
 import '../common/models/age.dart';
 import '../common/models/sitting_ability.dart';
+import '../common/models/standing_ability.dart';
 import '../common/widgets/section_button.dart';
 import '../common/widgets/submit_button.dart';
 import '../common/widgets/vr_app_bar.dart';
@@ -12,7 +13,7 @@ class FillingInfoScreen extends StatelessWidget {
 
   static const route = '/filling-info-screen';
   final double _spacing = 10;
-  final double _buttonWidth = 200;
+  final double _buttonWidth = 250;
   final double _buttonRadius = 20;
 
   @override
@@ -48,8 +49,26 @@ class FillingInfoScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: SubmitButton(LocaleText.of(context).submit),
+              padding: EdgeInsets.only(top: _spacing),
+              child: SectionButton(
+                LocaleText.of(context).standingAbility,
+                options: [
+                  StandingAbility.dynamicWithSupport,
+                  StandingAbility.dynamicNoSupport,
+                  StandingAbility.staticWithSupport,
+                  StandingAbility.staticNoSupport,
+                ],
+                width: _buttonWidth,
+                cornerRadius: _buttonRadius,
+                defaultOption: DefaultOption.first,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20.0),
+              child: SubmitButton(
+                LocaleText.of(context).submit,
+                width: 150,
+              ),
             ),
           ],
         ),

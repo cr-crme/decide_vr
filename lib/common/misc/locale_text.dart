@@ -25,6 +25,8 @@ class LocaleText with ChangeNotifier {
 
   String get sittingAbility =>
       {'en': 'Sitting Ability', 'fr': 'Capacité d\'assise'}[language]!;
+  String get standingAbility =>
+      {'en': 'Standing Ability', 'fr': 'Capacité de support'}[language]!;
   String get dynamicWithSupport =>
       {'en': 'Dynamic with support', 'fr': 'Avec support dynamique'}[language]!;
   String get dynamicNoSupport => {

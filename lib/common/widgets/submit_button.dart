@@ -25,7 +25,8 @@ class SubmitButton extends StatelessWidget {
       title: const Text('Voici les options sélectionnées'),
       content: Text(
         '${LocaleText.of(context, listen: false).age}: ${answers.age.title(context, listen: false)}\n'
-        '${LocaleText.of(context, listen: false).sittingAbility}: ${answers.sittingAbility.title(context, listen: false)}\n',
+        '${LocaleText.of(context, listen: false).sittingAbility}: ${answers.sittingAbility.title(context, listen: false)}\n'
+        '${LocaleText.of(context, listen: false).standingAbility}: ${answers.standingAbility.title(context, listen: false)}\n',
       ),
     );
 

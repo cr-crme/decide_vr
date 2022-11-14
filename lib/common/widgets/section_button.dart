@@ -67,6 +67,7 @@ class _SectionButtonState extends State<SectionButton> {
                 child: Text(
                   widget.title,
                   style: Theme.of(context).textTheme.titleLarge,
+                  textAlign: TextAlign.center,
                 ),
               ),
             ),
