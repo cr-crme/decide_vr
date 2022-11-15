@@ -15,7 +15,18 @@ class LocaleText with ChangeNotifier {
     return Provider.of<LocaleText>(context, listen: listen);
   }
 
+  String get appExplanation => {
+        'en': 'This app will help you choose a VR that corresponds to your'
+            'patient\'s need',
+        'fr': 'Cette application vous aidera à choisir un jeu de RV qui '
+            'correspond aux besoin de votre patient'
+      }[language]!;
+
   String get template => {'en': 'Template', 'fr': 'Canevas'}[language]!;
+  String get selectedOptions => {
+        'en': 'Here are the selected options',
+        'fr': 'Voici les options sélectionnées'
+      }[language]!;
 
   String get title =>
       {'en': 'Decide your VR game', 'fr': 'Choisi ton jeu RV'}[language]!;
@@ -69,4 +80,5 @@ class LocaleText with ChangeNotifier {
   String get difficulty => {'en': 'Difficulty', 'fr': 'Difficulté'}[language]!;
 
   String get submit => {'en': 'Submit', 'fr': 'Soumettre'}[language]!;
+  String get start => {'en': 'Start', 'fr': 'Débuter'}[language]!;
 }

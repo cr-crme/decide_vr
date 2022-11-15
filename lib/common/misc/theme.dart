@@ -14,7 +14,7 @@ ThemeData get decideVrTheme {
       error: Colors.red,
       onError: Colors.black,
       background: _backgroundColor,
-      onBackground: Colors.black,
+      onBackground: Colors.white,
       surface: _backgroundColor,
       onSurface: Colors.black,
     ),

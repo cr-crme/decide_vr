@@ -20,18 +20,19 @@ class SubmitButton extends StatelessWidget {
   }
 
   void _analyseResults(BuildContext context, Answers answers) {
+    final texts = LocaleText.of(context, listen: false);
     // set up the AlertDialog
     AlertDialog alert = AlertDialog(
-      title: const Text('Voici les options sélectionnées'),
+      title: Text(texts.selectedOptions),
       content: Text(
-        '${LocaleText.of(context, listen: false).age}: ${answers.age.title(context, listen: false)}\n'
-        '${LocaleText.of(context, listen: false).sittingAbility}: ${answers.sittingAbility.title(context, listen: false)}\n'
-        '${LocaleText.of(context, listen: false).standingAbility}: ${answers.standingAbility.title(context, listen: false)}\n'
-        '${LocaleText.of(context, listen: false).gameGoal}: ${answers.gameGoal.title(context, listen: false)}\n'
-        '${LocaleText.of(context, listen: false).environment}: ${answers.environment.title(context, listen: false)}\n'
-        '${LocaleText.of(context, listen: false).contraindications}: ${answers.contraindications.title(context, listen: false)}\n'
-        '${LocaleText.of(context, listen: false).gameLength}: ${answers.gameLength.title(context, listen: false)}\n'
-        '${LocaleText.of(context, listen: false).difficulty}: ${answers.difficulty.title(context, listen: false)}\n',
+        '${texts.age}: ${answers.age.title(context, listen: false)}\n'
+        '${texts.sittingAbility}: ${answers.sittingAbility.title(context, listen: false)}\n'
+        '${texts.standingAbility}: ${answers.standingAbility.title(context, listen: false)}\n'
+        '${texts.gameGoal}: ${answers.gameGoal.title(context, listen: false)}\n'
+        '${texts.environment}: ${answers.environment.title(context, listen: false)}\n'
+        '${texts.contraindications}: ${answers.contraindications.title(context, listen: false)}\n'
+        '${texts.gameLength}: ${answers.gameLength.title(context, listen: false)}\n'
+        '${texts.difficulty}: ${answers.difficulty.title(context, listen: false)}\n',
       ),
     );
 

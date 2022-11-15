@@ -55,7 +55,7 @@ class _SectionButtonState extends State<SectionButton>
   ///Setting up the animation
   void _prepareExpandAnimation() {
     _expandController = AnimationController(
-        duration: const Duration(milliseconds: 500), vsync: this);
+        duration: const Duration(milliseconds: 200), vsync: this);
     _expandAnimation = CurvedAnimation(
       parent: _expandController,
       curve: Curves.decelerate,

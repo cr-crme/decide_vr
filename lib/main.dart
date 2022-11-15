@@ -5,6 +5,7 @@ import './common/misc/locale_text.dart';
 import './common/misc/theme.dart';
 import './common/providers/answers.dart';
 import './screens/fill_info_screen.dart';
+import './screens/welcome_screen.dart';
 
 void main() {
   // We set the default language to french, but this can be set later
@@ -26,9 +27,10 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         theme: decideVrTheme,
-        initialRoute: FillingInfoScreen.route,
+        initialRoute: WelcomeScreen.route,
         routes: {
           FillingInfoScreen.route: (ctx) => const FillingInfoScreen(),
+          WelcomeScreen.route: (ctx) => const WelcomeScreen(),
         },
       ),
     );
