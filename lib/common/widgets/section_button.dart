@@ -84,7 +84,7 @@ class _SectionButtonState extends State<SectionButton>
             child: ElevatedButton(
               onPressed: _clickExpand,
               style: ElevatedButton.styleFrom(
-                fixedSize: Size.fromWidth(widget.width),
+                fixedSize: Size(widget.width, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(widget.cornerRadius),
                 ),
