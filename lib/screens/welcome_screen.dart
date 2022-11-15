@@ -37,6 +37,7 @@ class WelcomeScreen extends StatelessWidget {
             const SizedBox(height: 30),
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.75,
+              height: 100,
               child: Text(
                 LocaleText.of(context).appExplanation,
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
@@ -117,7 +118,7 @@ class _LanguageSwitcherState extends State<_LanguageSwitcher> {
               style: Theme.of(context)
                   .textTheme
                   .headline4!
-                  .copyWith(color: Theme.of(context).colorScheme.onBackground),
+                  .copyWith(fontWeight: FontWeight.bold),
             ),
           ),
           Positioned(
@@ -128,7 +129,7 @@ class _LanguageSwitcherState extends State<_LanguageSwitcher> {
               style: Theme.of(context)
                   .textTheme
                   .headline4!
-                  .copyWith(color: Theme.of(context).colorScheme.onBackground),
+                  .copyWith(fontWeight: FontWeight.bold),
             ),
           ),
         ],
