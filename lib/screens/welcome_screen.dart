@@ -81,14 +81,25 @@ class _LanguageSwitcher extends StatefulWidget {
   State<_LanguageSwitcher> createState() => _LanguageSwitcherState();
 }
 
-class _LanguageSwitcherState extends State<_LanguageSwitcher> {
+class _LanguageSwitcherState extends State<_LanguageSwitcher>
+    with TickerProviderStateMixin {
   bool _currentLanguage = true;
-  late final double _sliderWidthRatio = 0.55;
+
+  late final AnimationController _slideController = AnimationController(
+    duration: const Duration(milliseconds: 500),
+    vsync: this,
+  );
+
+  @override
+  void dispose() {
+    _slideController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: _changeLanguage,
+      onTap: _clickedChangeLanguage,
       child: Stack(
         alignment: AlignmentDirectional.center,
         children: [
@@ -99,19 +110,22 @@ class _LanguageSwitcherState extends State<_LanguageSwitcher> {
             width: widget.width,
             height: widget.height,
           ),
-          Positioned(
-            right:
-                _currentLanguage ? 0 : widget.width * (1 - _sliderWidthRatio),
+          PositionedTransition(
+            rect: RelativeRectTween(
+              begin: RelativeRect.fromLTRB(widget.width * 0.45, 0, 0, 0),
+              end: RelativeRect.fromLTRB(0, 0, widget.width * 0.45, 0),
+            ).animate(CurvedAnimation(
+              parent: _slideController,
+              curve: Curves.easeInOut,
+            )),
             child: Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),
                   color: Theme.of(context).colorScheme.primary),
-              width: widget.width * _sliderWidthRatio,
-              height: widget.height,
             ),
           ),
           Positioned(
-            right: widget.width * _sliderWidthRatio * 1.05,
+            left: widget.width * 0.1,
             height: widget.height,
             child: Text(
               'en',
@@ -122,7 +136,7 @@ class _LanguageSwitcherState extends State<_LanguageSwitcher> {
             ),
           ),
           Positioned(
-            left: widget.width * _sliderWidthRatio * 1.15,
+            right: widget.width * 0.1,
             height: widget.height,
             child: Text(
               'fr',
@@ -137,10 +151,12 @@ class _LanguageSwitcherState extends State<_LanguageSwitcher> {
     );
   }
 
-  void _changeLanguage() {
+  void _clickedChangeLanguage() {
     _currentLanguage = !_currentLanguage;
     LocaleText.of(context, listen: false)
         .setLanguage(_currentLanguage ? 'fr' : 'en');
+
+    _currentLanguage ? _slideController.reverse() : _slideController.forward();
     setState(() {});
   }
 }
