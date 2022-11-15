@@ -29,7 +29,9 @@ class SubmitButton extends StatelessWidget {
         '${LocaleText.of(context, listen: false).standingAbility}: ${answers.standingAbility.title(context, listen: false)}\n'
         '${LocaleText.of(context, listen: false).gameGoal}: ${answers.gameGoal.title(context, listen: false)}\n'
         '${LocaleText.of(context, listen: false).environment}: ${answers.environment.title(context, listen: false)}\n'
-        '${LocaleText.of(context, listen: false).contraindications}: ${answers.contraindications.title(context, listen: false)}\n',
+        '${LocaleText.of(context, listen: false).contraindications}: ${answers.contraindications.title(context, listen: false)}\n'
+        '${LocaleText.of(context, listen: false).gameLength}: ${answers.gameLength.title(context, listen: false)}\n'
+        '${LocaleText.of(context, listen: false).difficulty}: ${answers.difficulty.title(context, listen: false)}\n',
       ),
     );
 

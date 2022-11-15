@@ -4,13 +4,13 @@ import './option.dart';
 import '../misc/locale_text.dart';
 import '../providers/answers.dart';
 
-class Contraindications implements Option {
-  Contraindications() : choice = -1;
-  Contraindications._fromChoice(this.choice);
+class GameLength implements Option {
+  GameLength() : choice = -1;
+  GameLength._fromChoice(this.choice);
 
   final int choice;
-  static Contraindications get option1 => Contraindications._fromChoice(0);
-  static Contraindications get option2 => Contraindications._fromChoice(1);
+  static GameLength get option1 => GameLength._fromChoice(0);
+  static GameLength get option2 => GameLength._fromChoice(1);
 
   @override
   String title(context, {listen = true}) {
@@ -27,6 +27,6 @@ class Contraindications implements Option {
   @override
   void clickAnswerCallback(context) {
     final answers = Provider.of<Answers>(context, listen: false);
-    answers.contraindications = this;
+    answers.gameLength = this;
   }
 }

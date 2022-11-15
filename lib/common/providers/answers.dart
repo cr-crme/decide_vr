@@ -2,9 +2,10 @@ import 'package:flutter/foundation.dart';
 
 import '../models/age.dart';
 import '../models/contraindications.dart';
+import '../models/difficulty.dart';
 import '../models/environment.dart';
 import '../models/game_goal.dart';
-import '../models/option_template.dart';
+import '../models/game_length.dart';
 import '../models/sitting_ability.dart';
 import '../models/standing_ability.dart';
 
@@ -16,6 +17,8 @@ class Answers extends ChangeNotifier {
     gameGoal,
     environment,
     contraindications,
+    gameLength,
+    difficulty,
   })  : _age = age ?? Age.all,
         _sittingAbility = sittingAbility ?? SittingAbility.dynamicWithSupport,
         _standingAbility =
@@ -23,7 +26,8 @@ class Answers extends ChangeNotifier {
         _gameGoal = gameGoal ?? GameGoal.endurance,
         _environment = environment ?? Environment.option1,
         _contraindications = contraindications ?? Contraindications.option1,
-        _template = OptionTemplate.option1;
+        _gameLength = gameLength ?? GameLength.option1,
+        _difficulty = Difficulty.option1;
 
   Age _age;
   Age get age => _age;
@@ -67,10 +71,17 @@ class Answers extends ChangeNotifier {
     notifyListeners();
   }
 
-  OptionTemplate _template;
-  OptionTemplate get template => _template;
-  set template(OptionTemplate value) {
-    _template = value;
+  GameLength _gameLength;
+  GameLength get gameLength => _gameLength;
+  set gameLength(GameLength value) {
+    _gameLength = value;
+    notifyListeners();
+  }
+
+  Difficulty _difficulty;
+  Difficulty get difficulty => _difficulty;
+  set difficulty(Difficulty value) {
+    _difficulty = value;
     notifyListeners();
   }
 }

@@ -63,5 +63,10 @@ class LocaleText with ChangeNotifier {
   String get contraindications =>
       {'en': 'Contraindications', 'fr': 'Contre-indications'}[language]!;
 
+  String get gameLength =>
+      {'en': 'Game length', 'fr': 'Durée de jeu'}[language]!;
+
+  String get difficulty => {'en': 'Difficulty', 'fr': 'Difficulté'}[language]!;
+
   String get submit => {'en': 'Submit', 'fr': 'Soumettre'}[language]!;
 }
