@@ -1,7 +1,9 @@
 import 'package:flutter/foundation.dart';
 
 import '../models/age.dart';
+import '../models/environment.dart';
 import '../models/game_goal.dart';
+import '../models/option_template.dart';
 import '../models/sitting_ability.dart';
 import '../models/standing_ability.dart';
 
@@ -11,11 +13,14 @@ class Answers extends ChangeNotifier {
     sittingAbility,
     standingAbility,
     gameGoal,
+    environment,
   })  : _age = age ?? Age.all,
         _sittingAbility = sittingAbility ?? SittingAbility.dynamicWithSupport,
         _standingAbility =
             standingAbility ?? StandingAbility.dynamicWithSupport,
-        _gameGoal = gameGoal ?? GameGoal.endurance;
+        _gameGoal = gameGoal ?? GameGoal.endurance,
+        _environment = environment ?? Environment.option1,
+        _template = OptionTemplate.option1;
 
   Age _age;
   Age get age => _age;
@@ -42,6 +47,20 @@ class Answers extends ChangeNotifier {
   GameGoal get gameGoal => _gameGoal;
   set gameGoal(GameGoal value) {
     _gameGoal = value;
+    notifyListeners();
+  }
+
+  Environment _environment;
+  Environment get environment => _environment;
+  set environment(Environment value) {
+    _environment = value;
+    notifyListeners();
+  }
+
+  OptionTemplate _template;
+  OptionTemplate get template => _template;
+  set template(OptionTemplate value) {
+    _template = value;
     notifyListeners();
   }
 }

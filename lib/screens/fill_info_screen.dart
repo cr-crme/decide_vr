@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../common/misc/locale_text.dart';
 import '../common/models/age.dart';
+import '../common/models/environment.dart';
 import '../common/models/game_goal.dart';
 import '../common/models/sitting_ability.dart';
 import '../common/models/standing_ability.dart';
@@ -77,6 +78,16 @@ class FillingInfoScreen extends StatelessWidget {
                     GameGoal.unimanualUpperExtremity,
                     GameGoal.bimanualUpperExtremity,
                   ],
+                  width: _buttonWidth,
+                  cornerRadius: _buttonRadius,
+                  defaultOption: DefaultOption.first,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: _spacing),
+                child: SectionButton(
+                  LocaleText.of(context).environment,
+                  options: [Environment.option1],
                   width: _buttonWidth,
                   cornerRadius: _buttonRadius,
                   defaultOption: DefaultOption.first,

@@ -15,6 +15,8 @@ class LocaleText with ChangeNotifier {
     return Provider.of<LocaleText>(context, listen: listen);
   }
 
+  String get template => {'en': 'Template', 'fr': 'Canevas'}[language]!;
+
   String get title =>
       {'en': 'Decide your VR game', 'fr': 'Choisi ton jeu RV'}[language]!;
   String get all => {'en': 'All', 'fr': 'Tous'}[language]!;
@@ -54,6 +56,9 @@ class LocaleText with ChangeNotifier {
       {'en': 'Unimanual upper extremity', 'fr': 'Un bras'}[language]!;
   String get bimanualUpperExtremity =>
       {'en': 'Bimanual upper extremity', 'fr': 'Ambidextrie'}[language]!;
+
+  String get environment =>
+      {'en': 'Environment', 'fr': 'Environnement'}[language]!;
 
   String get submit => {'en': 'Submit', 'fr': 'Soumettre'}[language]!;
 }
