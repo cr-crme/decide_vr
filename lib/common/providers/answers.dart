@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 
 import '../models/age.dart';
+import '../models/contraindications.dart';
 import '../models/environment.dart';
 import '../models/game_goal.dart';
 import '../models/option_template.dart';
@@ -14,12 +15,14 @@ class Answers extends ChangeNotifier {
     standingAbility,
     gameGoal,
     environment,
+    contraindications,
   })  : _age = age ?? Age.all,
         _sittingAbility = sittingAbility ?? SittingAbility.dynamicWithSupport,
         _standingAbility =
             standingAbility ?? StandingAbility.dynamicWithSupport,
         _gameGoal = gameGoal ?? GameGoal.endurance,
         _environment = environment ?? Environment.option1,
+        _contraindications = contraindications ?? Contraindications.option1,
         _template = OptionTemplate.option1;
 
   Age _age;
@@ -54,6 +57,13 @@ class Answers extends ChangeNotifier {
   Environment get environment => _environment;
   set environment(Environment value) {
     _environment = value;
+    notifyListeners();
+  }
+
+  Contraindications _contraindications;
+  Contraindications get contraindications => _contraindications;
+  set contraindications(Contraindications value) {
+    _contraindications = value;
     notifyListeners();
   }
 

@@ -60,5 +60,8 @@ class LocaleText with ChangeNotifier {
   String get environment =>
       {'en': 'Environment', 'fr': 'Environnement'}[language]!;
 
+  String get contraindications =>
+      {'en': 'Contraindications', 'fr': 'Contre-indications'}[language]!;
+
   String get submit => {'en': 'Submit', 'fr': 'Soumettre'}[language]!;
 }
